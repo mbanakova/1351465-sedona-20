@@ -1,0 +1,18 @@
+.video {
+  text-align: center;
+}
+
+.video__title {
+  @include fields();
+  @include font(18px, 26px, 700);
+  color: $black;
+}
+
+.video__text {
+  @include fields();
+  @include font(14px, 24px, 400);
+}
+
+// .video__controls {
+
+// }

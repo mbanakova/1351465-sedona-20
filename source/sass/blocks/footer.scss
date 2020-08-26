@@ -1,0 +1,23 @@
+.footer {
+  padding-top: 38px;
+  padding-bottom: 23px;
+  color: $black;
+}
+
+.footer__hashtag {
+  @include font(21px, 26px, 700);
+  text-align: center;
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright-text {
+  @include font(14px, 26px, 400);
+}
+
+// .footer__copyright-logo {
+
+// }

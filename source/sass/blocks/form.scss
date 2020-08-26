@@ -1,0 +1,215 @@
+.form__title {
+  @include fields();
+  @include font(18px, 26px, 700);
+  color: $black;
+  text-align: center;
+}
+
+.form__text {
+  @include fields();
+  @include font(14px, 24px, 400);
+  text-align: center;
+}
+
+.form__fieldset {
+  @include fields();
+  position: relative;
+  padding-top: 20px;
+  border: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+    background-color: $light-grey;
+  }
+}
+
+.form__legend {
+  @include fields();
+  @include font(18px, 26px, 700);
+  color: $black;
+  text-align: center;
+}
+
+.form__label {
+  @include font(14px, 26px, 400);
+
+  &--radio {
+    @include font(18px, 26px, 700);
+    text-transform: none;
+    padding: 0 20px 0 74px;
+
+    &::before{
+      position: absolute;
+      content: "";
+      width: 58px;
+      height: 58px;
+      top: 0;
+      left: 0;
+      background-color: $medium-grey;
+      border-radius: 50%;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 18px;
+      left: 18px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: $basic-grey;
+      display: none;
+    }
+  }
+
+  &--checkbox {
+    @include font(18px, 26px, 700);
+    text-transform: none;
+    padding: 0 20px 0 74px;
+
+    &::before{
+      position: absolute;
+      content: "";
+      width: 58px;
+      height: 58px;
+      top: 0;
+      left: 0;
+      background-color: $medium-grey;
+      border-radius: 5px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 18px;
+      left: 20px;
+      width: 21px;
+      height: 13px;
+      border-left: 4px solid $basic-grey;
+      border-bottom: 4px solid $basic-grey;
+      border-radius: 2px;
+      transform: rotate(-45deg);
+      display: none;
+    }
+  }
+}
+
+/* Чекбокс активный */
+
+.form__checkbox:checked + .form__label--checkbox::after,
+.form__radio:checked + .form__label--radio::after {
+  display: block;
+}
+
+/* Чекбокс, наведение */
+
+.form__label--radio:hover::before,
+.form__label--checkbox:hover::before {
+  background-color: $light-grey;
+  transition: 0.2s ease-in-out;
+}
+
+/* Чекбокс, клик */
+
+.form__label--radio:active::before,
+.form__label--checkbox:active::before {
+  background-color: $dull-grey;
+  border-color: rgba($basic-grey, 0.3);
+  transition: 0.2s ease-in-out;
+}
+
+.form__input,
+.form__mobile,
+.form__email {
+  @include fields();
+  @include font(18px, 26px, 700);
+  height: 58px;
+  padding: 0 22px;
+  border: 4px solid $medium-grey;
+  background-color: $medium-grey;
+  color: $black;
+
+  &::placeholder {
+    opacity: 1;
+    color: $black;
+  }
+
+  &:hover {
+    border-color: $light-grey;
+    background-color: $light-grey;
+    transition: 0.2s ease-in-out;
+  }
+
+  &:focus {
+    background-color: $white;
+    border: 4px solid $light-grey;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.form__radio,
+.form__checkbox {
+  appearance: none;
+  position: relative;
+}
+
+.form__list {
+  @include ul();
+}
+
+.form__item {
+  position: relative;
+  min-height: 58px;
+  margin-bottom: 13px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form__textarea {
+  @include font(18px, 26px, 700);
+  @include fields();
+  padding: 13px 22px;
+  border: none;
+  background-color: $medium-grey;
+  width: 100%;
+  min-height: 160px;
+  resize: none;
+
+  &::placeholder {
+    opacity: 1;
+    color: $black;
+  }
+}
+
+.form__submit {
+  @include button();
+  @include font(21px, 26px, 700);
+  padding: 15px;
+  padding-top: 18px;
+  width: 100%;
+  background-color: $accent;
+  color: $white;
+
+  &:hover {
+    background-color: $accent-hover;
+    transition: 0.2s ease-in-out;
+  }
+
+  &:active {
+    background-color: $accent-active;
+    color: rgba($white, 0.2);
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.form__note {
+  @include fields();
+  display: none;
+}

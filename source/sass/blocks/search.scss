@@ -1,0 +1,23 @@
+.search {
+  padding-top: 33px;
+  padding-bottom: 49px;
+}
+
+.search__title {
+  @include fields();
+  @include font(21px, 26px, 700);
+  text-align: center;
+}
+
+.search__text {
+  @include fields();
+  text-align: center;
+}
+
+.search__button {
+  @include a();
+  @include font(21px, 26px, 700);
+  padding: 15px 30px 17px;
+  background-color: $accent;
+  color: $white;
+}

@@ -1,0 +1,24 @@
+.socials {
+  @include ul();
+  display: flex;
+}
+
+.socials__item {
+  @include font(0, 0, inherit);
+  margin-right: 6px;
+  width: 46px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $accent;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.socials__link {
+  @include font(0, 0, 0);
+  background-color: $accent;
+}

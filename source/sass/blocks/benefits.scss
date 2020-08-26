@@ -1,0 +1,40 @@
+.benefits {
+  @include ul();
+  text-align: center;
+}
+
+.benefits__item {
+  padding: 39px 0 35px;
+
+  &--blue {
+    background-color: $accent;
+    color: $white;
+  }
+
+  &--grey {
+    background-color: $bg-grey;
+    color: $black;
+    border-bottom: 1px solid $border-grey;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.benefits__title {
+  @include fields();
+  @include font(18px, 26px, 700);
+}
+
+// .benefits__number {
+
+// }
+
+.benefits__text {
+  @include fields();
+}
+
+// .benefits__img {
+
+// }

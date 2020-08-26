@@ -1,1 +1,20 @@
-// Начните писать стили здесь
+@import "../sass/utils/vars.scss";
+@import "../sass/utils/mixins.scss";
+@import "../sass/utils/colors.scss";
+@import "blocks/visually-hidden.scss";
+@import "blocks/body.scss";
+@import "blocks/header.scss";
+@import "blocks/logo.scss";
+@import "blocks/nav.scss";
+@import "blocks/promo.scss";
+@import "blocks/features.scss";
+@import "blocks/benefits.scss";
+@import "blocks/goals.scss";
+@import "blocks/search.scss";
+@import "blocks/map.scss";
+@import "blocks/footer.scss";
+@import "blocks/socials.scss";
+@import "blocks/photo.scss";
+@import "blocks/video.scss";
+@import "blocks/controls.scss";
+@import "blocks/form.scss";

@@ -1,0 +1,17 @@
+.logo {
+  margin: 0;
+  width: 102px;
+  height: 84px;
+
+  @media (min-width: $desktop) {
+    width: 187px;
+    height: 97px;
+  }
+}
+
+.logo__img {
+  @media (min-width: $desktop) {
+    width: 187px;
+    height: 97px;
+  }
+}

@@ -1,0 +1,22 @@
+.goals {
+  @include ul();
+  padding: 35px 0;
+}
+
+.goals__item {
+  padding-left: 48px;
+  margin-bottom: 26px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.goals__title {
+  @include fields();
+  @include font(18px, 26px, 700);
+}
+
+.goals__text {
+  @include fields();
+}

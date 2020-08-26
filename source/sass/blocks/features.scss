@@ -1,0 +1,15 @@
+.features {
+  padding-top: 32px;
+}
+
+.features__title {
+  @include fields();
+  @include font(18px, 26px, 700);
+  text-align: center;
+}
+
+.features__text {
+  @include fields();
+  @include font(14px, 26px, 400);
+  text-align: center;
+}

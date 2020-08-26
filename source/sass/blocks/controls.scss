@@ -1,0 +1,38 @@
+.controls__group {
+  position: relative;
+  background-color: rgba($black, 0.6);
+  width: auto;
+  height: 45px;
+}
+
+.controls__range {
+  @include fields();
+  -webkit-appearance: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: rgba($white, 0.2);
+  width: calc(100% - 45px);
+  height: 3px;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    z-index: 3;
+  }
+}
+
+.controls__button {
+  width: 9px;
+  height: 9px;
+  background-color: $white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}

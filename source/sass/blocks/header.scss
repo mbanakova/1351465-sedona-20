@@ -1,0 +1,34 @@
+.header {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet) {
+    position: relative;
+    display: block;
+  }
+}
+
+.header__nav {
+  position: relative;
+}
+
+.header__logo {
+  order: 1;
+  align-self: center;
+  width: 102px;
+  height: 84px;
+  z-index: 500;
+
+  @media (min-width: $tablet) {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: $desktop) {
+    width: 187px;
+    height: 97px;
+  }
+}
