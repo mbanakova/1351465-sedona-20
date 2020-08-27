@@ -7,7 +7,7 @@
 
 .controls__range {
   @include fields();
-  -webkit-appearance: none;
+  appearance: none;
   position: absolute;
   top: 50%;
   left: 0;
@@ -17,7 +17,7 @@
   height: 3px;
 
   &::-webkit-slider-thumb {
-    -webkit-appearance: none;
+    appearance: none;
     position: relative;
     width: 13px;
     height: 13px;

@@ -1,7 +1,7 @@
 
 .nav__list {
   @include ul();
-  background: linear-gradient(to top, rgba($black, 0.2) 0px, transparent 10px) $accent;
+  background: linear-gradient(to top, rgba($black, 0.2) 0, transparent 10px) $accent;
 
   @media (min-width: $tablet) {
     display: grid;
@@ -104,7 +104,7 @@
     content: "";
     width: 4px;
     height: 30px;
-    top: 0px;
+    top: 0;
     right: 13px;
     transform: rotate(45deg);
     background-color: $white;

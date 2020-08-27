@@ -2,16 +2,43 @@
   padding-top: 38px;
   padding-bottom: 23px;
   color: $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $tablet) {
+    width: 647px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop) {
+    width: 960px;
+  }
 }
 
 .footer__hashtag {
   @include font(21px, 26px, 700);
+  margin-bottom: 33px;
   text-align: center;
+
+  @media (min-width: $tablet) {
+    @include fields();
+  }
 }
+
+// .footer__socials {
+
+// }
 
 .footer__copyright {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .footer__copyright-text {

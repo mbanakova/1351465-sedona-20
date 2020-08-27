@@ -1,20 +1,89 @@
 .goals {
   @include ul();
+  width: 260px;
+  margin: 0 auto;
   padding: 35px 0;
+
+  @media (min-width: $tablet) {
+    width: auto;
+    margin: 0;
+    padding: 60px 0;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 58px;
+    padding-bottom: 80px;
+  }
 }
 
 .goals__item {
   padding-left: 48px;
   margin-bottom: 26px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: -10px;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:first-child::before {
+    background-image: url("../img/icon-house.svg");
+  }
+
+  &:nth-child(2)::before {
+    background-image: url("../img/icon-gift.svg");
+  }
+
+  &:last-child::before {
+    background-image: url("../img/icon-burger.svg");
+  }
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+
+  @media (min-width: $tablet) {
+    padding-left: 0;
+    padding-top: 100px;
+    margin: 0 auto;
+    text-align: center;
+    width: 190px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 80px;
+      height: 80px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: $desktop) {
+    width: 300px;
   }
 }
 
 .goals__title {
   @include fields();
   @include font(18px, 26px, 700);
+  margin-bottom: 18px;
+
+  @media (min-width: $tablet) {
+    @include font(21px, 26px, 700);
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 23px;
+  }
 }
 
 .goals__text {
