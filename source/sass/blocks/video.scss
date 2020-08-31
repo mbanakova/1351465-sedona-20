@@ -5,12 +5,16 @@
 .video__title {
   @include fields();
   @include font(18px, 26px, 700);
+  width: 280px;
+  margin: 0 auto 27px;
   color: $black;
 }
 
 .video__text {
   @include fields();
   @include font(14px, 24px, 400);
+  margin: 0 auto 33px;
+  width: 280px;
 }
 
 // .video__controls {

@@ -1,13 +1,24 @@
 .photo {
-  padding-top: 31px;
-  padding-bottom: 49px;
+  width: 280px;
+  margin: 31px auto 32px;
+
+  @media (min-width: $tablet) {
+    width: 648px;
+    margin: 59px auto 40px;
+  }
 }
 
 .photo__title {
   @include fields();
   @include font(18px, 26px, 700);
+  margin-bottom: 27px;
   color: $black;
   text-align: center;
+
+  @media (min-width: $tablet) {
+    @include font(30px, 26px, 700);
+    margin: 0 auto 26px;
+  }
 }
 
 .photo__text {
@@ -15,46 +26,60 @@
   @include font(14px, 24px, 400);
   position: relative;
   padding-bottom: 40px;
-  margin-bottom: 22px;
   text-align: center;
 
   &::after {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 320px;
     height: 1px;
     bottom: 0;
-    left: 0;
+    left: -20px;
     background-color: $light-grey;
+  }
+
+  @media (min-width: $tablet) {
+    width: 458px;
+    padding-bottom: 0;
+    margin: 0 auto 83px;
+
+    &::after {
+      display: none;
+    }
   }
 }
 
 .photo__article {
-  margin: 0 auto;
-  padding-top: 23px;
+  margin: 23px auto 0;
   padding-bottom: 15px;
   position: relative;
 
   &::after {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 320px;
     height: 1px;
     bottom: 0;
-    left: 0;
+    left: -20px;
     background-color: $light-grey;
+  }
+
+  @media (min-width: $tablet) {
+    @include fields();
   }
 }
 
 .photo__header {
   @include fields();
   @include font(14px, 24px, 700);
+  margin-bottom: 1px;
   color: $black;
   text-align: left;
 }
 
 .photo__author {
   @include fields();
+  margin-bottom: 10px;
   text-transform: none;
   text-align: left;
 }
@@ -68,4 +93,5 @@
   @include font(14px, 24px, 700);
   color: $black;
   text-align: left;
+  vertical-align: top;
 }
