@@ -1,5 +1,14 @@
 .video {
   text-align: center;
+
+  @media (min-width: $tablet) {
+    width: 648px;
+    margin: 0 auto 40px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 800px;
+  }
 }
 
 .video__title {
@@ -8,6 +17,11 @@
   width: 280px;
   margin: 0 auto 27px;
   color: $black;
+
+  @media (min-width: $tablet) {
+    @include font(30px, 26px, 700);
+    width: 100%;
+  }
 }
 
 .video__text {
@@ -15,6 +29,22 @@
   @include font(14px, 24px, 400);
   margin: 0 auto 33px;
   width: 280px;
+
+  @media (min-width: $tablet) {
+    width: 445px;
+    margin-bottom: 67px;
+  }
+}
+
+.video__img {
+  @media (min-width: $tablet) {
+    width: 648px;
+    height: 500px;
+  }
+  @media (min-width: $desktop) {
+    width: 800px;
+    height: 500px;
+  }
 }
 
 // .video__controls {

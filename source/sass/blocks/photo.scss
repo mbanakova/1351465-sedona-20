@@ -4,7 +4,14 @@
 
   @media (min-width: $tablet) {
     width: 648px;
-    margin: 59px auto 40px;
+    margin: 59px auto 59px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1200px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -18,6 +25,12 @@
   @media (min-width: $tablet) {
     @include font(30px, 26px, 700);
     margin: 0 auto 26px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  @media (min-width: $desktop) {
+    grid-column-end: 4;
   }
 }
 
@@ -42,10 +55,16 @@
     width: 458px;
     padding-bottom: 0;
     margin: 0 auto 83px;
+    grid-column-start: 1;
+    grid-column-end: 3;
 
     &::after {
       display: none;
     }
+  }
+
+  @media (min-width: $desktop) {
+    grid-column-end: 4;
   }
 }
 
@@ -66,6 +85,63 @@
 
   @media (min-width: $tablet) {
     @include fields();
+    background-color: $medium-grey;
+
+    &::after {
+      display: none;
+    }
+
+    &:first-of-type {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    max-height: 267px;
+
+    &:first-of-type {
+      grid-column-end: 4;
+      max-height: 400px;
+    }
+  }
+}
+
+.photo__img {
+  @media (min-width: $tablet) {
+    width: 324px;
+    height: 267px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 400px;
+    height: 267px;
+  }
+
+  &--front {
+    @media (min-width: $tablet) {
+      width: 648px;
+      height: 400px;
+    }
+
+    @media (min-width: $desktop) {
+      width: 1200px;
+    }
+  }
+}
+
+.photo__description {
+  @media (min-width: $tablet) {
+    padding: 22px 20px 15px;
+    position: relative;
+  }
+
+  @media (min-width: $desktop) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($black, 0.3);
   }
 }
 
@@ -75,6 +151,10 @@
   margin-bottom: 1px;
   color: $black;
   text-align: left;
+
+  @media (min-width: $desktop) {
+    color: $white;
+  }
 }
 
 .photo__author {
@@ -82,11 +162,35 @@
   margin-bottom: 10px;
   text-transform: none;
   text-align: left;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop) {
+    color: $white;
+  }
+}
+
+.photo__feedback {
+  @media (min-width: $tablet) {
+    position: absolute;
+    top: 33px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .photo__like {
   @include button();
   text-align: left;
+  margin-right: 9px;
+
+  @media (min-width: $desktop) {
+    color: $white;
+  }
 }
 
 .photo__counter {
@@ -94,4 +198,8 @@
   color: $black;
   text-align: left;
   vertical-align: top;
+
+  @media (min-width: $desktop) {
+    color: $white;
+  }
 }
