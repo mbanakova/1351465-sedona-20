@@ -1,19 +1,50 @@
+.controls {
+  width: calc(100% - 40px);
+  height: 111px;
+  background: linear-gradient(to bottom, (rgba($black, 0.6)) 45px, $medium-grey 45px, $medium-grey 100%);
+
+  @media (min-width: $tablet) {
+    height: 93px;
+    width: 100%;
+    background: rgba($black, 0.6);
+  }
+}
+
+.controls__wrap {
+  padding: 23px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet) {
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 35px;
+  }
+}
+
 .controls__group {
   position: relative;
-  background-color: rgba($black, 0.6);
-  width: auto;
-  height: 45px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+
+  @media (min-width: $tablet) {
+    margin: 0;
+    order: 1;
+  }
 }
 
 .controls__range {
   @include fields();
   appearance: none;
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  color: rgba($white, 0.2);
-  width: calc(100% - 45px);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $white;
+  opacity: 0.2;
+  width: 100%;
   height: 3px;
 
   &::-webkit-slider-thumb {
@@ -32,7 +63,62 @@
   background-color: $white;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 20px;
+  top: -3px;
+  left: 40px;
+}
+
+.controls__replay,
+.controls__subs,
+.controls__fullscreen {
+  @include button();
+  height: 20px;
+  fill: $controls;
+
+  &:hover {
+    transition: 0.2s ease-in-out;
+    fill: $basic-grey;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: 0.2s ease-in-out;
+  }
+
+  @media (min-width: $tablet) {
+    fill: $white;
+
+    &:hover {
+      fill: $white;
+      opacity: 0.6;
+      transition: 0.2s ease-in-out;
+    }
+
+    &:active {
+      opacity: 0.3;
+      transition: 0.2s ease-in-out;
+    }
+  }
+}
+
+.controls__replay {
+  margin-right: auto;
+
+  @media (min-width: $tablet) {
+    margin-right: 42px;
+  }
+}
+
+.controls__subs {
+  margin-right: 31px;
+
+  @media (min-width: $tablet) {
+    order: 1;
+    margin-left: 42px;
+  }
+}
+
+.controls__fullscreen {
+  @media (min-width: $tablet) {
+    order: 1;
+  }
 }

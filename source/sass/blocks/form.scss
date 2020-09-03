@@ -9,6 +9,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  @media (min-width: $desktop) {
+    width: 960px;
+  }
 }
 
 .form__title {
@@ -33,26 +37,27 @@
 
   @media (min-width: $tablet) {
     width: 435px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 72px;
     grid-column-start: 1;
     grid-column-end: 3;
   }
 }
 
 .form__fieldsets {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-  "impression name"
-  "contacts contacts"
-  "places places"
-  "textarea textarea"
-  "button subtext"
-  ;
-  align-items: center;
+  @media (min-width: $tablet) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 72px;
+    grid-template-areas:
+      "impression name"
+      "contacts contacts"
+      "places places"
+      "textarea textarea"
+      "button subtext";
+    align-items: center;
+  }
 }
 
 .form__fieldset {
@@ -72,12 +77,14 @@
   }
 
   @media (min-width: $tablet) {
-    &--name {
-      grid-area: name;
+    padding: 0;
+
+    &::before {
+      display: none;
     }
 
-    &--contacts {
-      grid-area: contacts;
+    &--name {
+      grid-area: name;
     }
 
     &--impression {
@@ -101,9 +108,25 @@
 .form__legend {
   @include fields();
   @include font(18px, 26px, 700);
-  padding-top: 20px;
+  padding: 20px 0;
+  background-color: $white;
   color: $black;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $tablet) {
+    position: relative;
+    padding: 0 40px 0;
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $desktop) {
+    &--places {
+      white-space: pre-line;
+      width: 340px;
+    }
+  }
 }
 
 .form__label {
@@ -112,6 +135,11 @@
 
   &--contacts {
     margin: 0 0 5px 26px;
+
+    @media (min-width: $desktop) {
+      margin: 0 17px 0 0;
+      white-space: nowrap;
+    }
   }
 
   &--radio {
@@ -143,6 +171,10 @@
       border-radius: 50%;
       background-color: $basic-grey;
       display: none;
+    }
+
+    @media (min-width: $tablet) {
+      padding-right: 20px;
     }
   }
 
@@ -177,6 +209,10 @@
       border-radius: 2px;
       transform: rotate(-45deg);
       display: none;
+    }
+
+    @media (min-width: $desktop) {
+      min-width: 200px;
     }
   }
 }
@@ -235,6 +271,13 @@
   }
 }
 
+.form__mobile,
+.form__email {
+  @media (min-width: $tablet) {
+    width: 648px;
+  }
+}
+
 .form__radio,
 .form__checkbox {
   appearance: none;
@@ -243,6 +286,30 @@
 
 .form__list {
   @include ul();
+
+  @media (min-width: $tablet) {
+    &--contacts {
+      width: 648px;
+    }
+
+    &--checkbox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 32px;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    &--checkbox {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &--contacts {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }
 
 .form__item {
@@ -262,15 +329,41 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  @media (min-width: $tablet) {
+    width: 324px;
+
+    &--contacts {
+      width: 100%;
+    }
+
+    &--checkbox {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    width: 400px;
+
+    &--checkbox {
+      width: 25%;
+    }
+
+    &--contacts {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+
+      &:last-of-type {
+        width: 480px;
+      }
+    }
+  }
 }
 
 .form__input {
   flex-grow: 1;
   width: 160px;
-
-  @media (min-width: $tablet) {
-    // width: auto;
-  }
 }
 
 .form__textarea {
@@ -318,5 +411,13 @@
   @media (min-width: $tablet) {
     display: block;
     grid-area: subtext;
+    text-align: right;
+    margin-left: 30px;
+  }
+}
+
+.form__span {
+  @media (min-width: $desktop) {
+    display: none;
   }
 }
