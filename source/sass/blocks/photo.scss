@@ -201,6 +201,35 @@
   }
 }
 
+.photo__svg {
+  fill: rgba($black, 0.3);
+
+  &:hover {
+    transition: 0.2s ease-in-out;
+    fill: $basic-grey;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: 0.2s ease-in-out;
+  }
+
+  @media (min-width: $desktop) {
+    fill: $white;
+
+    &:hover {
+      fill: $white;
+      opacity: 0.6;
+      transition: 0.2s ease-in-out;
+    }
+
+    &:active {
+      opacity: 0.3;
+      transition: 0.2s ease-in-out;
+    }
+  }
+}
+
 .photo__counter {
   @include font(14px, 24px, 700);
   color: $black;
