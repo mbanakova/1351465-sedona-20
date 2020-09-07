@@ -80,6 +80,12 @@
     padding: 0;
 
     &::before {
+      background-color: $grey;
+      top: 13px;
+    }
+
+    &--name::before,
+    &--impression::before {
       display: none;
     }
 
@@ -89,6 +95,17 @@
 
     &--impression {
       grid-area: impression;
+      margin-right: 57px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: $grey;
+      }
     }
 
     &--places {
@@ -103,13 +120,34 @@
       grid-area: contacts;
     }
   }
+
+  @media (min-width: $desktop) {
+    &--name {
+      width: 400px;
+      margin-left: auto;
+    }
+
+    &--impression {
+      width: 480px;
+      margin-right: 0;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: $grey;
+      }
+    }
+  }
 }
 
 .form__legend {
   @include fields();
   @include font(18px, 26px, 700);
-  padding: 0;
-  background-color: $white;
+  padding: 20px 0 0;
   color: $black;
   text-align: center;
   margin-left: auto;
@@ -117,14 +155,31 @@
 
   @media (min-width: $tablet) {
     position: relative;
-    padding: 0 40px 0;
+    padding: 0 60px 0;
+    background-color: $white;
     margin-bottom: 50px;
-  }
 
-  @media (min-width: $desktop) {
+    &--impression,
+    &--name {
+      padding: 0;
+      margin-left: 0;
+      text-align: left;
+    }
+
     &--places {
       white-space: pre-line;
       width: 340px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 300px;
+      top: 0;
+      left: 25%;
+      background-color: $white;
+      z-index: -1;
     }
   }
 }
@@ -288,6 +343,13 @@
   @include ul();
 
   @media (min-width: $tablet) {
+    &--name {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      width: 267px;
+    }
+
     &--contacts {
       width: 648px;
     }
@@ -309,6 +371,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+
+    &--name {
+      width: 400px;
+    }
   }
 }
 
@@ -320,6 +386,31 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &--contacts {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 58px;
+      height: 57px;
+      top: 26px;
+      right: 0;
+      background-color: $svg-grey;
+      background-image: url("../img/icon-phone.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+
+    @media (min-width: $desktop) {
+      top: 0;
+    }
+  }
+
+    &:last-child::before {
+      background-image: url("../img/icon-mail.svg");
+    }
   }
 
   &--radio,

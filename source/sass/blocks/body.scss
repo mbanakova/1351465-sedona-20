@@ -1,12 +1,19 @@
 .body {
   @include font();
   @include fields();
+  position: relative;
   min-width: $mobile;
+  max-width: 1200px;
+  margin: 0 auto;
   font-family: $pt;
   color: $basic-grey;
   text-transform: uppercase;
   background-color: $white;
   overflow-x: hidden;
+
+  @media (min-width: $desktop) {
+    box-shadow: 0px 5px 15px rgba($black, 0.2);
+  }
 }
 
 img {
@@ -19,4 +26,12 @@ img {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }
