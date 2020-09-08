@@ -77,8 +77,8 @@
   color: $white;
 
   @media (min-width: $tablet) {
-    min-width: 270px;
     @include font(21px, 26px, 400);
+    min-width: 270px;
   }
 
   &:hover {
