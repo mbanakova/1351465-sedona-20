@@ -2,20 +2,26 @@
   width: 320px;
   margin: 0 auto;
   background-color: $white;
-  box-shadow: 0px 7px 15px rgba($black, 0.15);
+  box-shadow: 0 7px 15px rgba($black, 0.15);
+
+  &--shown {
+    display: block;
+  }
+
+  &--hidden {
+    display: none;
+  }
 
   &--fail {
-    display: none;
     padding: 40px 40px 35px;
 
 
     @media (min-width: $tablet) {
-      width: 400px;
+      width: 640px;
     }
   }
 
   &--success {
-    display: none;
     padding: 38px 0 0;
 
     @media (min-width: $tablet) {
@@ -25,9 +31,9 @@
 }
 
 .modal__wrap {
-text-align: center;
-width: 235px;
-margin: 0 auto;
+  text-align: center;
+  width: 235px;
+  margin: 0 auto;
 
   @media (min-width: $tablet) {
     width: 500px;

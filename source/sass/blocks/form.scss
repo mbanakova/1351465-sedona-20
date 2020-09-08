@@ -403,10 +403,10 @@
       background-repeat: no-repeat;
       background-position: 50% 50%;
 
-    @media (min-width: $desktop) {
-      top: 0;
+      @media (min-width: $desktop) {
+        top: 0;
+      }
     }
-  }
 
     &:last-child::before {
       background-image: url("../img/icon-mail.svg");

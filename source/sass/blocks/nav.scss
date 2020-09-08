@@ -8,6 +8,12 @@
     grid-template-columns: repeat(5, 1fr);
     background: $white;
   }
+
+  &--js {
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
 }
 
 .nav__item {
@@ -110,17 +116,6 @@
     background-color: $white;
   }
 
-  // &::before {
-  //   position: absolute;
-  //   content: "";
-  //   width: 22px;
-  //   height: 4px;
-  //   top: 0;
-  //   left: 0;
-  //   background-color: $accent;
-  //   box-shadow: 0 9px 0 0 $accent, 0 18px 0 0 $accent;
-  // }
-
   &:hover {
     opacity: 0.6;
     transition: 0.2s ease-in-out;
@@ -131,7 +126,30 @@
     transition: 0.2s ease-in-out;
   }
 
-  @media (min-width: $tablet) {
-    display: none;
+  // @media (min-width: $tablet) {
+  //   display: none;
+  // }
+
+  &--js {
+    display: block;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 22px;
+      height: 4px;
+      top: 4px;
+      left: 4px;
+      background-color: $accent;
+      box-shadow: 0 9px 0 0 $accent, 0 18px 0 0 $accent;
+      transform: rotate(0);
+    }
+
+    &::after {
+      display: none;
+    }
+    @media (min-width: $tablet) {
+      display: none;
+    }
   }
 }
