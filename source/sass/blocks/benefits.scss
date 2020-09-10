@@ -29,13 +29,43 @@
 }
 
 .benefits__item {
-  padding: 49px 0 39px;
+  position: relative;
+  padding: 49px 0 40px;
   margin: 0 auto;
   border-bottom: 1px solid $border-grey;
   width: 295px;
 
-  &:last-of-type {
+  &--first {
+    @media (max-width: $tablet) {
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 1px;
+        border-top: 14px solid $white;
+        border-left: 160px solid $accent;
+        border-right: 160px solid $accent;
+      }
+    }
+  }
+
+  &--second {
+    padding-top: 40px;
+    padding-bottom: 36px;
     border-bottom: none;
+  }
+
+  &--grey {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    width: 250px;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 
   @media (min-width: $tablet) {
@@ -69,10 +99,10 @@
 
 .benefits__number {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 
   @media (min-width: $tablet) {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
 }
 

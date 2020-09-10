@@ -25,28 +25,38 @@
 .search__title {
   @include fields();
   @include font(21px, 26px, 700);
-  margin-bottom: 20px;
+  margin-bottom: 23px;
   text-align: center;
 
   @media (min-width: $tablet) {
-    margin-bottom: 25px;
+    @include font(30px, 26px, 700);
+    margin-bottom: 33px;
   }
 }
 
 .search__text {
   @include fields();
+  @include font(14px, 24px, 400);
   margin-bottom: 27px;
   text-align: center;
 
+  br {
+    display: none;
+  }
+
   @media (min-width: $tablet) {
     margin-bottom: 37px;
+
+    br {
+      display: block;
+    }
   }
 }
 
 .search__button {
   @include a();
   @include font(21px, 26px, 700);
-  padding: 15px 30px 17px;
+  padding: 13px 30px 17px;
   background-color: $accent;
   color: $white;
 
@@ -64,5 +74,9 @@
   &--disabled {
     background-color: $light-grey;
     color: $white;
+  }
+
+  @media (min-width: $tablet) {
+    padding-bottom: 19px;
   }
 }

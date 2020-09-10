@@ -62,7 +62,7 @@
 .nav__link {
   @include a();
   @include font(18px, 40px, 700);
-  padding: 8px 20px 7px;
+  padding: 8px 20px 6px;
   color: $white;
   text-align: center;
 
@@ -89,7 +89,7 @@
   @include font(0, 0, inherit);
   position: absolute;
   top: 12px;
-  right: 20px;
+  right: 16px;
   color: $accent;
   width: 30px;
   height: 30px;
@@ -126,10 +126,6 @@
     transition: 0.2s ease-in-out;
   }
 
-  // @media (min-width: $tablet) {
-  //   display: none;
-  // }
-
   &--js {
     display: block;
 
@@ -148,9 +144,9 @@
     &::after {
       display: none;
     }
+  }
 
-    @media (min-width: $tablet) {
-      display: none;
-    }
+  @media (min-width: $tablet) {
+    display: none;
   }
 }

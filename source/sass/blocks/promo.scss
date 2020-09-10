@@ -37,8 +37,9 @@
 
 .promo__img {
   @media (min-width: $tablet) {
-    width: 498px;
-    height: 376px;
+    width: 461px;
+    height: 350px;
+    margin-bottom: 12px;
   }
 
   @media (min-width: $desktop) {

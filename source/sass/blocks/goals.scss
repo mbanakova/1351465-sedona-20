@@ -2,7 +2,7 @@
   @include ul();
   width: 260px;
   margin: 0 auto;
-  padding: 35px 0;
+  padding: 36px 0 36px;
 
   @media (min-width: $tablet) {
     width: auto;
@@ -17,41 +17,64 @@
 }
 
 .goals__item {
-  padding-left: 48px;
+  padding-left: 40px;
   margin-bottom: 26px;
   position: relative;
 
   &::before {
     position: absolute;
     content: "";
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 36px;
     top: -10px;
-    left: 0;
+    left: -8px;
     background-size: contain;
     background-repeat: no-repeat;
   }
 
   &:first-child::before {
     background-image: url("../img/icon-house.svg");
+
+    @media (min-width: $tablet) {
+      background-size: 80px 74px;
+    }
   }
 
   &:nth-child(2)::before {
     background-image: url("../img/icon-gift.svg");
+
+    @media (max-width: $tablet) {
+      left: -5px;
+    }
+
+    @media (min-width: $tablet) {
+      background-size: 80px 74px;
+    }
   }
 
   &:last-child::before {
     background-image: url("../img/icon-burger.svg");
+
+    @media (max-width: $tablet) {
+      left: -12px;
+      top: -5px;
+    }
   }
 
   &:last-child {
     margin-bottom: 0;
+
+    @media (min-width: $tablet) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+    }
   }
 
 
   @media (min-width: $tablet) {
     padding-left: 0;
-    padding-top: 100px;
+    padding-top: 99px;
     margin: 0 auto;
     text-align: center;
     width: 190px;
@@ -75,10 +98,11 @@
 .goals__title {
   @include fields();
   @include font(18px, 26px, 700);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 
   @media (min-width: $tablet) {
     @include font(21px, 26px, 700);
+    margin-bottom: 22px;
   }
 
   @media (min-width: $desktop) {
