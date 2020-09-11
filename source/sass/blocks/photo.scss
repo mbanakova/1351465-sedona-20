@@ -1,16 +1,17 @@
 .photo {
   width: 280px;
-  margin: 31px auto 32px;
+  margin: 25px auto 33px;
 
   @media (min-width: $tablet) {
     width: 648px;
-    margin: 59px auto 59px;
+    margin: 59px auto 58px;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
   @media (min-width: $desktop) {
     width: 1200px;
+    margin-top: 100px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -18,18 +19,19 @@
 .photo__title {
   @include fields();
   @include font(18px, 26px, 700);
-  margin-bottom: 27px;
+  margin-bottom: 29px;
   color: $black;
   text-align: center;
 
   @media (min-width: $tablet) {
     @include font(30px, 26px, 700);
-    margin: 0 auto 26px;
+    margin: 0 auto 33px;
     grid-column-start: 1;
     grid-column-end: 3;
   }
 
   @media (min-width: $desktop) {
+    margin-bottom: 35px;
     grid-column-end: 4;
   }
 }
@@ -38,7 +40,7 @@
   @include fields();
   @include font(14px, 24px, 400);
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 38px;
   text-align: center;
 
   &::after {
@@ -52,9 +54,9 @@
   }
 
   @media (min-width: $tablet) {
-    width: 458px;
+    width: 440px;
     padding-bottom: 0;
-    margin: 0 auto 83px;
+    margin: 0 auto 81px;
     grid-column-start: 1;
     grid-column-end: 3;
 
@@ -64,6 +66,7 @@
   }
 
   @media (min-width: $desktop) {
+    margin-bottom: 79px;
     grid-column-end: 4;
   }
 }
@@ -116,9 +119,12 @@
 }
 
 .photo__img {
+  margin-bottom: 6px;
+
   @media (min-width: $tablet) {
     width: 324px;
     height: 267px;
+    margin-bottom: 0;
   }
 
   @media (min-width: $desktop) {
@@ -140,7 +146,7 @@
 
 .photo__description {
   @media (min-width: $tablet) {
-    padding: 22px 20px 15px;
+    padding: 11px 20px 18px;
     position: relative;
   }
 
@@ -167,7 +173,7 @@
 
 .photo__author {
   @include fields();
-  margin-bottom: 10px;
+  margin-bottom: 13px;
   text-transform: none;
   text-align: left;
 
@@ -183,7 +189,7 @@
 .photo__feedback {
   @media (min-width: $tablet) {
     position: absolute;
-    top: 33px;
+    top: 24px;
     right: 20px;
     display: flex;
     justify-content: space-between;

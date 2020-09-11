@@ -40,7 +40,7 @@
     <h1 class="visually-hidden">Страница отзывов о поездке в Седону</h1>
     <section class="promo promo--inner">
       <h2 class="visually-hidden">Приветственный баннер</h2>
-      <img class="promo__img" src="img/text-sedona.svg" width="229" height="39" alt="Sedona!">
+      <img class="promo__img promo__img--text" src="img/text-sedona.svg" width="229" height="39" alt="Sedona!">
     </section>
 
     <section class="form">
@@ -66,7 +66,7 @@
             </li>
         </fieldset>
         <fieldset class="form__fieldset form__fieldset--contacts">
-          <legend class="form__legend">Контактная информация:</legend>
+          <legend class="form__legend form__legend--contacts">Контактная информация:</legend>
           <ul class="form__list form__list--contacts">
             <li class="form__item form__item--contacts">
               <label class="form__label form__label--contacts" for="mobile"><span class="form__span">Контактный
@@ -117,7 +117,7 @@
             </li>
         </fieldset>
         <fieldset class="form__fieldset form__fieldset--textarea">
-          <legend class="form__legend">Опишите свои эмоции:</legend>
+          <legend class="form__legend form__legend--textarea">Опишите свои эмоции:</legend>
           <textarea class="form__textarea" name="emotions" id="emotions"
             placeholder="Опишите подробно все свои восторги"></textarea>
         </fieldset>
@@ -168,7 +168,7 @@
   </footer>
 
   <section class="body__modal modal modal--hidden modal--fail">
-    <div class="modal__wrap">
+    <div class="modal__wrap modal__wrap--fail">
       <h2 class="modal__title">Что-то пошло не так!</h2>
       <p class="modal__text">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
       <button class="modal__button modal__button--fail" type="submit">Ок</button>
@@ -176,9 +176,10 @@
   </section>
 
   <section class="body__modal modal modal--hidden modal--success">
-    <div class="modal__wrap">
+    <div class="modal__wrap modal__wrap--success">
       <h2 class="modal__title modal__title--success">Ваш отзыв отправлен!</h2>
-      <p class="modal__text">Спасибо за ваше участие, ваш отзыв уже поступил к нам. <br>В ближайшее время мы опубликуем
+      <p class="modal__text modal__text--success">Спасибо за ваше участие, ваш отзыв уже поступил к нам. <br>В ближайшее
+        время мы опубликуем
         его
         на
         сайте.</p>
