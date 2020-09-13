@@ -1,6 +1,6 @@
 .form {
   margin: 36px auto 74px;
-  width: 280px;
+  // width: 280px;
 
   @media (min-width: $tablet) {
     margin-top: 74px;
@@ -17,30 +17,40 @@
   }
 }
 
+.form__container {
+  @media (max-width: $tablet) {
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+
 .form__title {
   @include fields();
   @include font(18px, 26px, 700);
-  margin-bottom: 30px;
   color: $black;
   text-align: center;
+  width: 280px;
+  margin: 0 auto 30px;
 
   @media (min-width: $tablet) {
     @include font(30px, 26px, 700);
     margin-bottom: 34px;
     grid-column-start: 1;
     grid-column-end: 3;
+    width: auto;
   }
 }
 
 .form__text {
   @include fields();
   @include font(14px, 24px, 400);
-  margin-bottom: 15px;
   text-align: center;
+  width: 280px;
+  margin: 0 auto 15px;
 
   @media (min-width: $tablet) {
     width: 435px;
-    margin: 0 auto 72px;
+    margin: 0 auto 85px;
     grid-column-start: 1;
     grid-column-end: 3;
   }
@@ -70,38 +80,46 @@
 .form__fieldset {
   @include fields();
   position: relative;
-  padding: 20px 0 25px;
+  margin-top: 16px;
+  margin-bottom: 22px;
   border: none;
+  border-top: 1px solid $light-grey;
+  // border: none;
 
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 1px;
-    top: 0;
-    left: 0;
-    background-color: $light-grey;
-  }
+  // &::before {
+  //   position: absolute;
+  //   content: "";
+  //   width: 100%;
+  //   height: 1px;
+  //   top: 0;
+  //   left: 0;
+  //   background-color: $light-grey;
+  // }
 
   &--impression {
-    padding-bottom: 19px;
+    margin-bottom: 16px;
+  }
+
+  &--contacts {
+    margin-bottom: 28px;
   }
 
   &--places {
-    padding-bottom: 21px;
+    margin-bottom: 21px;
   }
 
   &--textarea {
-    padding-bottom: 43px;
+    margin-bottom: 40px;
   }
 
   @media (min-width: $tablet) {
     padding: 0;
+    margin-top: 0;
 
-    &::before {
-      background-color: $grey;
-      top: 13px;
-    }
+    // &::before {
+    //   background-color: $grey;
+    //   top: 13px;
+    // }
 
     &--name::before,
     &--impression::before {
@@ -110,35 +128,43 @@
 
     &--name {
       grid-area: name;
+      border: none;
+      margin-bottom: 12px;
     }
 
     &--impression {
       grid-area: impression;
       margin-right: 57px;
+      margin-bottom: 12px;
+      border: none;
+      border-right: 1px solid $light-grey;
 
-      &::after {
-        position: absolute;
-        content: "";
-        width: 1px;
-        height: 100%;
-        top: 0;
-        right: 0;
-        background-color: $grey;
-      }
+      // &::after {
+      //   position: absolute;
+      //   content: "";
+      //   width: 1px;
+      //   height: 100%;
+      //   top: 0;
+      //   right: 0;
+      //   background-color: $grey;
+      // }
     }
 
     &--places {
       grid-area: places;
       margin-top: -21px;
+      margin-bottom: 12px;
     }
 
     &--textarea {
       grid-area: textarea;
       margin-top: -4px;
+      margin-bottom: 0;
     }
 
     &--contacts {
       grid-area: contacts;
+      margin-bottom: 12px;
     }
   }
 
@@ -146,21 +172,13 @@
     &--name {
       width: 400px;
       margin-left: auto;
+      margin-bottom: 10px;
     }
 
     &--impression {
       width: 480px;
       margin-right: 0;
-
-      &::after {
-        position: absolute;
-        content: "";
-        width: 1px;
-        height: 100%;
-        top: 0;
-        right: 0;
-        background-color: $grey;
-      }
+      margin-bottom: 10px;
     }
   }
 }
@@ -168,7 +186,9 @@
 .form__legend {
   @include fields();
   @include font(18px, 26px, 700);
-  padding: 22px 0 0;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 22px;
   color: $black;
   text-align: center;
   margin-left: auto;
@@ -179,6 +199,7 @@
     position: relative;
     padding: 0 60px 0;
     background-color: $white;
+    margin-top: -13px;
     margin-bottom: 50px;
 
     &--impression,
@@ -197,10 +218,12 @@
 
     &--contacts {
       margin-bottom: 25px;
+      width: 400px;
     }
 
     &--textarea {
       margin-bottom: 55px;
+      width: 390px;
     }
 
     &::after {
@@ -218,6 +241,10 @@
   @media (min-width: $desktop) {
     &--impression {
       margin-left: 80px;
+    }
+
+    &--contacts {
+      margin-bottom: 64px;
     }
   }
 }
@@ -563,7 +590,7 @@
   @include font(18px, 26px, 700);
   @include fields();
   font-family: $pt;
-  padding: 13px 22px;
+  padding: 10px 22px;
   border: none;
   background-color: $medium-grey;
   width: 100%;
@@ -612,7 +639,7 @@
 
   @media (min-width: $desktop) {
     margin-top: -20px;
-    margin-left: 8px;
+    margin-left: 0;
     width: 100%;
   }
 }

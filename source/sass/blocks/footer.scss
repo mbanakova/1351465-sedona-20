@@ -33,7 +33,10 @@
 
 .footer__socials {
   @include ul();
-  margin-bottom: 32px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 36px;
+  }
 }
 
 .footer__copyright {
@@ -67,7 +70,5 @@
 
   @media (min-width: $tablet) {
     margin-right: -8px;
-    width: 40px;
-    height: 42px;
   }
 }
