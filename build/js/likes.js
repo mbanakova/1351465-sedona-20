@@ -1,0 +1,1 @@
+"use strict";var like=document.querySelector(".photo__like"),likesNumber=document.querySelector(".photo__counter");like.onclick=function(){like.classList.contains("added")?likesNumber.textContent--:likesNumber.textContent++,like.classList.toggle("added")};
